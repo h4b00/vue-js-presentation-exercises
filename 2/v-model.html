@@ -1,0 +1,48 @@
+<html>
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <meta charset="UTF-8" />
+</head>
+<style>
+    .winner {
+        background-color: green;
+    }
+</style>
+
+<body>
+<div id="app">
+    {{ fullName }}
+    <button @click="updateFullName">Update</button>
+</div>
+
+<script>
+    var app =  new Vue({
+        el: '#app',
+        data: {
+            firstName: 'Adam',
+            lastName: 'Kowalski'
+        },
+        computed: {
+            fullName: {
+                // getter
+                get: function () {
+                    return this.firstName + ' ' + this.lastName
+                },
+                // setter
+                set: function (newValue) {
+                    var names = newValue.split(' ')
+                    this.firstName = names[0]
+                    this.lastName = names[names.length - 1]
+                }
+            }
+        },
+        methods: {
+            updateFullName: function() {
+                this.fullName = 'Adam Nowak'
+            }
+        }
+    })
+    console.log(app);
+</script>
+</body>
+</html>

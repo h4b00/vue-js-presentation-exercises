@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <meta charset="UTF-8" />
+</head>
+<body>
+<div id="app">
+    <div ref="toAnimate"><h1>Hello</h1></div>
+    <button @click="changeName()"> Change Name</button>
+    <button @click="addUser()">Add User</button>
+</div>
+
+<script>
+    var data = {
+        users: [
+            {firstName: 'Patryk', lastName: 'Kowalski'},
+            {firstName: 'Grzegorz', lastName: 'Kowalski'}
+        ]
+    };
+   var app =  new Vue({
+        el: '#app',
+        data: data,
+        computed: {
+            count: function() {
+                return this.users.length
+            }
+        },
+        methods: {
+            changeName: function(){
+                this.users[0].firstName = 'Adam';
+            },
+            addUser: function(){
+              this.users.push({firstName: 'Ala', lastName: 'Ma Kota'})
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>

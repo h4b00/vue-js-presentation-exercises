@@ -1,0 +1,37 @@
+<html>
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <meta charset="UTF-8" />
+</head>
+<style>
+    .winner {
+        background-color: green;
+    }
+</style>
+
+<body>
+<div class="app">
+    {{ firstName }}
+</div>
+<div class="app">
+    {{ firstName }}
+    <button>Update First</button>
+</div>
+
+<script>
+    app = new Vue({
+        el: '.app',
+        data: {
+            firstName: 'Adam',
+            lastName: 'Kowalski'
+        },
+        methods: {
+            updateFirstName: function() {
+                this.firstName = 'Jan'
+            }
+        }
+    })
+    console.log(app.);
+</script>
+</body>
+</html>

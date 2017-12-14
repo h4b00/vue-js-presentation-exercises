@@ -1,0 +1,50 @@
+<html>
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <meta charset="UTF-8" />
+</head>
+<body>
+<div id="app">
+    <h1>Iteracja po liczbach</h1>
+    <ul>
+        <li v-for="(i,e) in 10">{{ i }} {{ e}}</li>
+    </ul>
+    <h1>Iteracja po tablicy usersNames</h1>
+    <ul>
+        <li v-for="user in userNames">{{ user }}</li>
+    </ul>
+    <h1>Iteracja po talibcy users</h1>
+    <ul>
+        <li v-for="user in users" :key="user.id">{{ user.username }} - {{ user.login }}</li>
+    </ul>
+    <h1>Iteracja po talibcy users z indexem</h1>
+    <ul>
+        <li v-for="(user,index) in users">{{index}}. {{ user.username }} - {{ user.login }}</li>
+    </ul>
+    <h1>Iteracja po obiekcie user</h1>
+    <ul>
+        <li v-for="(value,key,index) in users" :key="user.id">{{index}}. {{key}}: {{value}}</li>
+    </ul>
+</div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            users: [
+                {username: 'Mikolaj', login:'Mik', id: '1'},
+                {username: 'Anna', login:'Ann', id: '2'},
+                {username: 'Olek', login:'Sasha', id: '3'}
+            ],
+            userNames: ['Mikolaj', 'Anna', 'Olek'],
+            user: {
+                firstName: 'Bartek',
+                lastName: 'Nowak'
+            }
+
+        }
+    })
+</script>
+</body>
+</html>

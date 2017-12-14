@@ -1,0 +1,38 @@
+<html>
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <meta charset="UTF-8" />
+</head>
+<body>
+<div id="app">
+    <hello v-if="isVisible"></hello>  {{ isVisible }}
+    <button @click="isVisible = !isVisible">Show</button>
+</div>
+<script type="x-template" id="my-template">
+    <div>{{welcomeMsg}}</div>
+</script>
+<script>
+    var hello =  {
+        template: "<div>{{ welcomeMsg }}</div>",
+        data: function(){
+            return {
+                welcomeMsg: 'Welcome 2'
+            }
+        },
+        created: function() {
+            console.log('created')
+        }
+    };
+
+    new Vue({
+        el: '#app',
+        data: {
+            isVisible: false
+        },
+        components: {
+            'hello': hello
+        }
+    })
+</script>
+</body>
+</html>
