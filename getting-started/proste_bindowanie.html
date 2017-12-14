@@ -1,0 +1,31 @@
+<html>
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <meta charset="UTF-8" />
+</head>
+<body>
+<div id="app">
+    <a v-bind:href="polcodeLink">Go to Polcode</a>
+    <a v-bind:href="returnPolcodeLink()">Go to Polcode 2</a>
+    <a href="{{ polcodeLink }}">Go to Polcode</a>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            welcomeMsg: 'Hello World!',
+            polcodeLink: 'http://polcode.com'
+        },
+        methods: {
+            returnPolcodeLink: function() {
+                return 'http://polcode.com';
+            },
+            returnWelcomeMsg: function () {
+                return this.welcomeMsg;
+            }
+        }
+    })
+</script>
+</body>
+</html>

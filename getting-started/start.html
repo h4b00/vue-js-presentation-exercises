@@ -1,0 +1,30 @@
+<html>
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <meta charset="UTF-8" />
+</head>
+<body>
+<div id="app">
+    <h1> {{ welcomeMsg }}</h1>
+    <h1> {{ sayHello() }}</h1>
+    <h1> {{ returnWelcomeMsg() }}</h1>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            welcomeMsg: 'Hello World!'
+        },
+        methods: {
+          sayHello: function() {
+              return 'Hello World from function';
+          },
+          returnWelcomeMsg: function () {
+            return this.welcomeMsg;
+          }
+        }
+    })
+</script>
+</body>
+</html>

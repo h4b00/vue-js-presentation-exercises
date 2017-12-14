@@ -1,0 +1,32 @@
+<html>
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <meta charset="UTF-8" />
+</head>
+<body>
+<div id="app">
+    <h1>Test</h1>
+    <h1 v-if="isLinkVisible">Hi Polocde!</h1>
+    <h1 v-if="isVisibileWebsite()">Hi Team!</h1>
+    <h1 v-show="isLinkVisible"> Test </h1>
+    <button @click="toggleVisible">Zmien</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            isLinkVisible: false,
+        },
+        methods: {
+            isVisibileWebsite: function () {
+                return this.isLinkVisible;
+            },
+            toggleVisible: function() {
+                this.isLinkVisible = !this.isLinkVisible;
+            }
+        }
+    })
+</script>
+</body>
+</html>
